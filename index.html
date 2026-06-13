@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Autá</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e9e9e9;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .car {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .car:hover {
+            transform: scale(1.05);
+            background: #f5f5f5;
+        }
+        img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+        .name {
+            font-size: 20px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        function openCar(name, img, text) {
+            let win = window.open("", "_blank", "width=1700,height=1600");
+            win.document.write(`
+                <html>
+                <head>
+                    <title>${name}</title>
+                    <style>
+                        body { font-family: Arial; padding: 20px; }
+                        img { width: 900px; border-radius: 30px; }
+                        a { font-size: 20px; }
+                    </style>
+                </head>
+                <body>
+                    <h1>${name}</h1>
+                    <img src="${img}">
+                    <p style="font-size: 40px;">${text}</p>
+                    <a href="#" onclick="window.close()">Zavrieť okno</a>
+                </body>
+                </html>
+            `);
+        }
+    </script>
+</head>
+<body>
+
+<header>Druhy Áut – Kliknte na auto pre  viac detailov.</header>
+<div class="container">
+
+    <div class="car" onclick="openCar('BMW M3 Competition',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDRQTQAegzNB0Qw-tH-HAvawjKfdQkGVpIlg&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDRQTQAegzNB0Qw-tH-HAvawjKfdQkGVpIlg&s',
+    'BMW M3 Competition je vrcholný vysokovýkonný športový model radu 3. Ponúka radový 6-valcový motor s výkonom až 390 kW (530 koní), ktorý dokáže zrýchliť z 0 na 100 km/h už za 3,5 sekundy.')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDRQTQAegzNB0Qw-tH-HAvawjKfdQkGVpIlg&s">
+        <div class="name">BMW M3 Competition</div>
+    </div>
+
+    <div class="car" onclick="openCar('BMW M1',
+    'https://images.squarespace-cdn.com/content/v1/5e1e8a13e8a3102d5c82d1b1/1594680683523-XE68DVKBUGAMHOM8LXV6/E30.jpg',
+    'BMW rad 3 (BMW 3 Series) je od roku 1975 symbolom športových sedanov a najpredávanejším modelom mníchovskej automobilky. Pojmom „staré BMW radu 3“ sa najčastejšie označujú prvé štyri generácie, ktoré sú dnes vyhľadávanými klasikami a youngtimermi.')">
+        <img src="https://images.squarespace-cdn.com/content/v1/5e1e8a13e8a3102d5c82d1b1/1594680683523-XE68DVKBUGAMHOM8LXV6/E30.jpg">
+        <div class="name">BMW M1</div>
+    </div>
+
+    <div class="car" onclick="openCar('Subaru Impreza WRX STI',
+    'https://www.sportovnivozy.cz/auta/204538/hlavni_v.jpg',
+    'Subaru Impreza WRX STI je ikonický vysokovýkonný športový automobil s koreňmi v majstrovstvách sveta v rely (WRC). Tento model, vyvinutý divíziou Subaru Tecnica International (STI), spája pretekárske technológie s autom určeným na bežné cesty.')">
+        <img src="https://www.sportovnivozy.cz/auta/204538/hlavni_v.jpg">
+        <div class="name">Subaru Impreza WRX STI</div>
+    </div>
+
+    <div class="car" onclick="openCar('Subaru Impreza 2',
+    'https://broom.tv2.no/underholdning/broom/media/images/content/4430/car_page_main.jpg',
+    'Subaru Impreza 2.0 Diesel je špecifický model kompaktnej nižšej strednej triedy, ktorý kombinuje unikátny naftový motor typu boxer s permanentným pohonom všetkých štyroch kolies (AWD). Vyrábal sa predovšetkým v tretej generácii Imprezy (označenie GE/GH) v rokoch 2008 až 2012.')">
+        <img src="https://broom.tv2.no/underholdning/broom/media/images/content/4430/car_page_main.jpg">
+        <div class="name">Subaru Impreza 2</div>
+    </div>
+
+    <div class="car" onclick="openCar('Porsche 911',
+    'https://www.jamesedition.com/stories/wp-content/uploads/2015/04/1970_Porsche-930-Turbo-1.jpg',
+    'Staršie generácie Porsche 911 (konkrétne modely vyrobené do roku 1998) sú celosvetovo uctievané pre svoje vzduchom chladené motory, mechanickú čistotu a ikonickú siluetu tvaru kvapky.')">
+        <img src="https://www.jamesedition.com/stories/wp-content/uploads/2015/04/1970_Porsche-930-Turbo-1.jpg">
+        <div class="name">Porsche 911</div>
+    </div>
+
+    <div class="car" onclick="openCar('Toyota AE86',
+    'https://pbs.twimg.com/media/G7W8rZXXMAATNZc.jpg',
+    'Toyota AE86 je kultový, malý a ľahký športový automobil s pohonom zadných kolies (RWD), ktorý automobilka Toyota vyrábala v rokoch 1983 až 1987 ako súčasť piatej generácie modelu Corolla.')">
+        <img src="https://pbs.twimg.com/media/G7W8rZXXMAATNZc.jpg">
+        <div class="name">Toyota AE86</div>
+    </div>
+
+    <div class="car" onclick="openCar('Toyota Supra MK4',
+    'https://cdn.motor1.com/images/mgl/PKZQL/s3/1997-toyota-supra-sold-for-176-000-at-auction.jpg',
+    'Toyota Supra Mk4 (generácia JZA80) je jedno z najikonickejších japonských športových áut všetkých čias, vyrábané v rokoch 1993 až 2002. Celosvetovú slávu a status legendy si auto získalo najmä vďaka neskutočne odolnému motoru, nadčasovému dizajnu a hlavnej úlohe vo filmovej sérii Rýchlo a zbesilo.')">
+        <img src="https://cdn.motor1.com/images/mgl/PKZQL/s3/1997-toyota-supra-sold-for-176-000-at-auction.jpg">
+        <div class="name">Toyota Supra MK4</div>
+    </div>
+
+    <div class="car" onclick="openCar('Nissan Skyline R34',
+    'https://www.startstop.sk/wp-content/uploads/2023/04/Paul_Walker_Nissan_Skyline_R34_01-scaled.jpeg',
+    'Nissan Skyline R34 je legendárny japonský športový automobil, ktorý sa vyrábal v rokoch 1998 až 2002. Predstavuje desiatu generáciu modelového radu Skyline a celosvetovú slávu si získal vďaka motoristickej kultúre, videohernej sérii Gran Turismo a účinkovaniu vo filmovej sérii Rýchlo a zbesilo.')">
+        <img src="https://www.startstop.sk/wp-content/uploads/2023/04/Paul_Walker_Nissan_Skyline_R34_01-scaled.jpeg">
+        <div class="name">Nissan Skyline R34</div>
+    </div>
+
+    <div class="car" onclick="openCar('Mitsubishi Eclipse R/C', 'https://cdn.dealeraccelerate.com/rkm/1/8633/597011/1920x1440/1995-mitsubishi-eclipse-gsx', 'Mitsubishi Eclipse z roku 1995 predstavuje prvý modelový rok ikonickej druhej generácie (2G) tohto športového kupé, ktoré sa preslávilo najmä účinkovaním vo filme Rýchlo a zbesilo. Tento automobil priniesol v porovnaní s prvou generáciou modernejší, zaoblenejší dizajn a zásadné zmeny v ponuke motorov.')">
+        <img src="https://cdn.dealeraccelerate.com/rkm/1/8633/597011/1920x1440/1995-mitsubishi-eclipse-gsx">
+        <div class="name">Mitsubishi Eclipse R/C</div>
+    </div>
+
+    <div class="car" onclick="openCar('Ford Mustang Fastback 1965',
+    'https://www.gallery-aaldering.com/wp-content/uploads/2025/12/ford-mustang-fastback-1966.jpg?v=8',
+    'Ford Mustang Fastback je jednou z najikonickejších karosárskych verzií v histórii automobilového priemyslu, známa svojou neprerušovanou klesajúcou líniou strechy od čelného skla až po zadnú kapotu.')">
+        <img src="https://www.gallery-aaldering.com/wp-content/uploads/2025/12/ford-mustang-fastback-1966.jpg?v=8">
+        <div class="name">Ford Mustang Fastback 1965</div>
+    </div>
+    
+    <div class="car" onclick="openCar('1970 Dodge Charger R/T',
+    'https://images.classic.com/vehicles/486ebe6df3dbe822b294c98aa7411d0724b77b01.jpg?w=1200&h=676&fit=crop',
+    '1970 Dodge Charger R/T je ikonický americký športový automobil, ktorý sa vyrábal v rokoch 1968 až 1970. Patrí k najznámejším modelom z obdobia 70. rokov a je známy svojou výraznou karosériou a výkonnými motorami.')">
+        <img src="https://images.classic.com/vehicles/486ebe6df3dbe822b294c98aa7411d0724b77b01.jpg?w=1200&h=676&fit=crop">
+        <div class="name">1970 Dodge Charger R/T</div>
+    </div>
+
+    <div class="car" onclick="openCar('1997 Mazda RX-7',
+    'https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/7a0a3c6148108c9c64425dd85e0181fa3cccb652/photos/exterior/9lZkxV5E-60W37Xl/edit/g85Wk.jpg?t=176851199072https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/7a0a3c6148108c9c64425dd85e0181fa3cccb652/photos/exterior/9lZkxV5E-60W37Xl/edit/g85Wk.jpg?t=176851199072',
+    'Mazda RX-7 z roku 1997 patrí do ikonickej tretej generácie (označovanej ako FD3S alebo skrátene FD). Ide o jedno z najuznávanejších japonských športových áut 90. rokov (éra JDM), ktoré preslávil najmä unikátny rotačný Wankelov motor a nadčasový dizajn.')">
+        <img src="https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/7a0a3c6148108c9c64425dd85e0181fa3cccb652/photos/exterior/9lZkxV5E-60W37Xl/edit/g85Wk.jpg?t=176851199072">
+        <div class="name">1997 Mazda RX-7</div>
+    </div>
+</div>
+
+</body>
+</html>
+
